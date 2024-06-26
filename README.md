@@ -192,7 +192,7 @@ If you want to play old games that require "MPU-401 Intelligent Mode" (Sierra ga
 ```
 C:\SOFTMPU\>softmpu /mpu:330 /sb:220 /irq:7
 ```
-If you want to hook up an I²C OLED display to the mt32-pi, there's a pin header on the TinyLlama labeled "I2C_OLED". The order of the pins from 1 to 4 is: GND, VCC, SCL, SDA with pin 1 being the one closest to the 3.5mm audio jack.
+If you want to hook up an I²C OLED display to the mt32-pi, there's a pin header on the MiniCamel labeled "I2C_OLED". The order of the pins from 1 to 4 is: GND, VCC, SCL, SDA with pin 1 being the one closest to the 3.5mm audio jack.
 
 ## WiFi Connectivity
 There's a [section][wiki-wifi] in the wiki dedicated to this, take a look.
@@ -203,18 +203,8 @@ For an in-depth discussion of the various components, installation, configuratio
 ## Help
 This project is indended for people with a fair bit of hardware- and DOS knowledge. If you have questions or need help, please look at the [wiki][wiki] and [FAQ][wiki-faq] section first.
 
-## Roadmap
-Coming.  
-In the mean time feel free to post [an issue][issues] if you have tips, suggestions or want to report an error.
-
 ## License
 [GNU General Public License v3.0](LICENSE)
-
-## Contact
-Development thread: [Vogons][vogons-thread]  
-Mastodon: [@eivindbohler@techhub.social][mastodon]  
-Twitter: [@eivindbohler][twitter]  
-YouTube: [@eivindbohler][youtube]
 
 ## Acknowledgements
 

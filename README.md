@@ -1,5 +1,4 @@
 <div id="summary" align="center">
-  <img src=images/tinyllama2.png title="TinyLlama" width=90% />
 </div>
 
 <br/>

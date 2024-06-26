@@ -45,13 +45,6 @@ This is an expansion of the TinyLlama v2 board created by Eivind Bohler. It comb
 
 <br/>
 
-<div>
-<img src="images/tinyllama2_case_front.png" title="Case Front" width=40% align="left" style="margin-right: 4%"/>
-<img src="images/tinyllama2_case_back.png" title="Case Front" width=40% />
-</div>
-
-<br/>
-
 ## Project Goals
 I'm learning how to build these types of boards and decided to use a project I've built in the past and that I'm familiar with as a starting point.
 The biggest goal I have for this project is to learn enough to begin designing my own circuits. In this case, I am relying on circuits that already exist

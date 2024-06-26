@@ -112,10 +112,10 @@ I will post the BOM after I complete the initial test build to make sure everyth
 1. Download the latest firmware binary from this repo, in the `hidman-binary` folder. Alternatively, get the latest source code from the [official repo][hidman] and compile it yourself.
 2. Download and install `WCHISPTool_Setup.exe` from [WCH's website][wch]. Unfortunately, this tool only supports Windows. If you're on macOS or Linux, maybe try using virtualization software, or even another computer.
 3. Open the `WCHISPTool_CH54x-55x` application.
-4. Make sure the TinyLlama is powered off.
-5. **Remove** the jumper from the "HID_POWER" pin header on the PCB (to ensure that the computer doesn't backpower the TinyLlama).
-6. Connect a USB cable (type A to type A) between one of the HID USB ports on the TinyLlama and the Windows computer.
-7. Press and hold the "PRG" button on the bottom side of the TinyLlama until the CH559 device pops up in the WCHISPTool.
+4. Make sure the MiniCamel is powered off.
+5. **Remove** the jumper from the "HID_POWER" pin header on the PCB (to ensure that the computer doesn't backpower the MiniCamel).
+6. Connect a USB cable (type A to type A) between one of the HID USB ports on the MiniCamel and the Windows computer.
+7. Press and hold the "PRG" button on the bottom side of the MiniCamel until the CH559 device pops up in the WCHISPTool.
 8. Select the firmware binary file under _Download File -> Object File1_.
 9. Click the "Download" button. Hopefully you'll get a success message in the log section on the right side of the program window.
 10. Disconnect the USB cable.
@@ -123,9 +123,9 @@ I will post the BOM after I complete the initial test build to make sure everyth
 12. Connect a keyboard to one of the HID USB ports. You should be good to go!
 
 ### Programming the BIOS
-When purchasing the SOM-128-EX module from DMP, its ROM chip comes preinstalled with an Arduino-like bootloader which isn't what we want. Also, the  "crossbar" is configured for using the module with the 86Duino Zero/One boards - meaning its default pin layout is completely different from what we need for the TinyLlama.
+When purchasing the SOM-128-EX module from DMP, its ROM chip comes preinstalled with an Arduino-like bootloader which isn't what we want. Also, the  "crossbar" is configured for using the module with the 86Duino Zero/One boards - meaning its default pin layout is completely different from what we need for the MiniCamel.
 
-Follow these steps to flash the ROM with the TinyLlama BIOS for the first time:
+Follow these steps to flash the ROM with the MiniCamel BIOS for the first time:
 1. Find a USB flash drive, must be minimum 32 MB in size (shouldn't be a problem these days). Note that not all USB drives are bootable. Use a well-known bootable drive. _NB: You have to use a USB stick for this, an SD card won't work since the crossbar is configured to use different pins on the SOM for SD traffic._
 2. Do a block-level transfer of the `INITBIOS.IMG` from this repo to the USB drive. Use [Balena Etcher][balena-etcher], or the command line if you know what you're doing (macOS example):
 ```
@@ -134,7 +134,7 @@ $ diskutil list
 $ diskutil unmountDisk /dev/disk2
 $ sudo dd if=INITBIOS.IMG of=/dev/rdisk2 bs=1m
 ```
-3. Insert the USB flash drive into the TinyLlama and turn it on. It'll hopefully boot into MS-DOS. Then, to flash the ROM:
+3. Insert the USB flash drive into the MiniCamel and turn it on. It'll hopefully boot into MS-DOS. Then, to flash the ROM:
 ```
 C:\>anybios w initbios.rom
 ```

@@ -209,11 +209,12 @@ This project is indended for people with a fair bit of hardware- and DOS knowled
 ## Acknowledgements
 
 Many thanks to
-- [Sergey Kiselev][sergeys-projects] for sparking my interest in designing and building computers.
-- [Rasteri][rasteri-videos] for introducing me to the CS4237B chip.
-- [The Vogons forum][vogons] for inspiration, help and support.
-- [86Duino / DMP][86duino] for making a great and affordable system-on-module.
-- [Dale Whinham / mt32-pi][mt32-pi] for making the best synth emulator software.
+
+- [Eivind Bohler] for creating the initial project, helping me troubleshoot my ITX llama and being a HUGE inspiration.
+- [Rasteri][rasteri-videos] for creating the WeeCee and Wee86 that got me interested in going down this rabbit hole.
+- [The Vogons forum][vogons] for being a great resource and always providing help when needed.
+- [86Duino / DMP][86duino] for making a great and affordable system-on-module. (I concur with Eivind on this!)
+
 
 [tinyllama1]: https://github.com/eivindbohler/tinyllama
 [hidman]: https://github.com/rasteri/HIDman
@@ -232,12 +233,6 @@ Many thanks to
 
 [issues]: https://github.com/eivindbohler/tinyllama2/issues
 
-[vogons-thread]: https://www.vogons.org/viewtopic.php?t=84880
-[mastodon]: https://techhub.social/@eivindbohler
-[twitter]: https://twitter.com/eivindbohler
-[youtube]: https://youtube.com/@eivindbohler
-
-[sergeys-projects]: http://www.malinov.com/Home/sergeys-projects
 [rasteri-videos]: https://www.youtube.com/user/TheRasteri/videos
 [vogons]: https://www.vogons.org
 [86duino]: https://www.86duino.com

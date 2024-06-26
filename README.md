@@ -7,14 +7,20 @@
 <img src="images/tinyllama2_pcb_top.png" title="The TinyLlama board, assembled" width=50% align="right" />
 <br/>
 
-- A fully-fledged 486/Pentium-class PC in a tiny form factor
-- Integrated Sound Blaster Pro-compatible audio
+This is an expansion of the TinyLlama v2 board created by Eivind Bohler. It combines aspects of the ITX llama as well but in a 100mm x 100mm form factor.
+
+- A fully-fledged 486/Pentium-class PC in a small form factor
+- Integrated Sound Blaster Pro-compatible audio using the crystal CS4237b sound chip
+- Onboard fan controller for optional CPU or case fan support
+- Hard drive clicker and system LED on-board with breakout header for installing in a custom case.
+- Support for external OPL3 module from the ITX llama.
+- Integrated PCM5102 module
+- S/PDIF port for digital audio output
+- Ethernet port for 10/100 ethernet capability
+- Relocated ESP8266 module for use as dial-up modem emulator or wireless network connectivity.
 - Add a Raspberry Pi Zero 2 for Roland MT&#8209;32 and General MIDI music
 - Open-source hardware schematics, board layout and BIOS - build your own!
-- Perfect for playing DOS games!
 
-> **Note**  
-> YouTube walkthrough + setup coming soon!
 
 ## Table of Contents
 - [Summary](#summary)
@@ -48,18 +54,9 @@
 <br/>
 
 ## Project Goals
-The goal of the TinyLlama project is:
-- To create a fully x86-compatible DIY DOS computer with a sound card
-- To keep the size as small as possible while keeping decent connectivity
-- To keep the cost low
-
-## What's New In Version 2?
-Last year I released [version 1 of the TinyLlama][tinyllama1].  
-While I was very happy with it and it worked great, there were a couple of things I felt were still missing + a few bugs.  
-
-The two main new features in version 2 are:
-* Built-in hardware USB HID (keyboard+mouse) to PS/2 emulation using [rasteri's HIDman firmware][hidman] running on a CH559 microcontroller  
-* On-board Wemos D1 Mini ESP8266 for providing either a Hayes-compatible modem-over-WiFi or ethernet-over-WiFi (SLIP), depending on the firmware on the ESP.
+I'm learning how to build these types of boards and decided to use a project I've built in the past and that I'm familiar with as a starting point.
+The biggest goal I have for this project is to learn enough to begin designing my own circuits. In this case, I am relying on circuits that already exist
+but my hope is that my next project will be a scratch-built device that doesn't require any use of pre-existing projects.
 
 <p>
   <img src=images/tinyllama2_pcb_bottom.png title="TinyLlama" width=50%>
@@ -68,7 +65,7 @@ The two main new features in version 2 are:
 Both the CH559 and the ESP8266 can be easily re-flashed/programmed in-place.  
 Look at [Programming the CH559](#programming-the-ch559) and [Programming the ESP8266][wiki-wifi].
 
-## Full system specs (revision 2.1)
+## Full system specs (revision 0.1)
 ### Hardware
 - **86Duino System-on-module**
   * Vortex86EX CPU running at 60-500 MHz
@@ -82,6 +79,7 @@ Look at [Programming the CH559](#programming-the-ch559) and [Programming the ESP
   * [Alternative graphics cards][wiki-alternative-gpus]
 - **Crystal CS4237B all-in-one audio chip**
 - **12mm PC-speaker**
+- **12mm HDD clicker speaker**
 - **CR1220 battery for persistent real-time clock**
 - **Power and reset buttons**
 - **Connectivity**
@@ -90,12 +88,14 @@ Look at [Programming the CH559](#programming-the-ch559) and [Programming the ESP
   * 2 x USB Type-A connectors for storage devices (USB 2.0)
   * MicroSD slot for storage
   * DE-9 RS232 serial port (COM1)
+  * 1x RJ45 10/100 Ethernet port
   * Modem or Ethernet/SLIP over WiFi (COM2)
-  * Internal 2.54mm pin-header for connecting a fan (5V or 3.3V selectable)
+  * Internal fan pin-header (5V only)
   * 3.5mm line-out audio jack
+  * S/PDIF jack for digital line out
 - **mt32-pi subsystem**
   * 40-pin connector for a Raspberry Pi Zero 2
-  * Pin headers for attaching a GY-PCM5102 I²S DAC module
+  * Integrated PCM5102 I²S DAC module
   * Button for toggling between MT32 / General MIDI mode
   * Button for switching between audio ROMs / soundbanks
   * 4-pin I²C connector for an OLED display
@@ -110,26 +110,11 @@ Look at [Programming the CH559](#programming-the-ch559) and [Programming the ESP
 
 ## Building
 ### Sourcing Parts
-Full BOM (bill of materials) can be found [in the wiki][wiki-bom].
-- The TinyLlama PCB rev2.1
-- Modern SMD and through-hole components, as seen in the BOM
-- 86Duino system-on-module (SOM-128-EX)
-- Vortex86VGA Mini PCI-e module
-- Crystal CS4237B 100-pin TQFP. Discontinued, but readily available
-- Wemos D1 Mini ESP8266, optional
-- A CR1220 battery if you want a persistent real-time clock
-- One or more USB flash drives + an optional microSD card
-- A USB-C power adapter (minimum 2A)
+I will post the BOM after I complete the initial test build to make sure everything is correct.
 
 #### For MT-32/MIDI - optional
-- GY-PCM5102 DAC module
 - Raspberry Pi Zero 2 W with a microSD card
 - An [mt32-pi compatible OLED display][mt32-pi-oled], optional but nice
-
-### Assembly
-Solder all components onto the TinyLlama rev2.1 PCB. As always, it's easier to start with the low-profile ones first, like resistors and capacitors.
-If you're willing to spend slightly more, I recommended you let the PCB manufacturer pre-assemble most of the common components for you. Plus, some of the SMD components can be a bit tricky to solder.
-Take a look at the [wiki][wiki-assembly] for more in-depth assembly instructions.
 
 ### Programming the CH559
 1. Download the latest firmware binary from this repo, in the `hidman-binary` folder. Alternatively, get the latest source code from the [official repo][hidman] and compile it yourself.

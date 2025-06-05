@@ -6,8 +6,8 @@
 	(paper "User" 720 429.997)
 	(title_block
 		(title "MiniCamel")
-		(date "2024-06-18")
-		(rev "0.1")
+		(date "2025-06-05")
+		(rev "1.01C")
 		(company "Matt Schultz")
 		(comment 1 "Based on TinyLlama 2 by Eivind Bøhler")
 	)
@@ -21357,7 +21357,7 @@
 		)
 		(uuid "7126b502-da61-4bca-bbad-f9a10bdd23bc")
 	)
-	(text "MiniCamel v1.01\n"
+	(text "MiniCamel 1.01 REV.C"
 		(exclude_from_sim no)
 		(at 17.78 29.464 0)
 		(effects
@@ -70323,15 +70323,16 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Bridged")
-		(at 683.26 83.82 180)
+		(at 683.26 83.82 0)
+		(mirror y)
 		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
+		(exclude_from_sim no)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "ef204dd4-ec33-4a44-9855-8ac5f0fdbb5d")
 		(property "Reference" "JP6"
-			(at 683.26 81.534 0)
+			(at 683.26 81.026 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -70339,7 +70340,7 @@
 			)
 		)
 		(property "Value" "ESP_POWER"
-			(at 683.26 86.614 0)
+			(at 683.26 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
